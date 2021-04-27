@@ -7,22 +7,24 @@ import NavLinks from "./NavLinks";
 import {FaTwitter} from 'react-icons/fa';
 import { useScroll } from "../../hooks";
 import { BiArrowBack } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
-const DesktopNavbar = () => {
-  
+const DesktopNavbar = () => { 
   
   const { isMenuOpen, toggleMenu } = useMenuContext();
   const { isScrolled } = useScroll();
   return (
     <DesktopNav isScrolled={isScrolled}>
+    <BackLink to="/">
       {isScrolled && (
-        <BackArrow />
+        <BackArrow size={30} />
       )}
       {!isScrolled && (
-          <NavIcon />
+          <NavIcon size={30} />
       )}
+      </BackLink>
       <UserInfo>
-      <h2 className="userInfo">Twitter Feed</h2>
+      <h2 className="userInfo">Twitter Feed App</h2>
       </UserInfo>  
       <NavLinks />
       <Hamburger className="hamburger-react" toggled={isMenuOpen} toggle={toggleMenu} duration={0} />
@@ -46,7 +48,7 @@ const DesktopNav = styled.nav`
   width: 100%;
   height: 64px;
   padding: 0 60px;
-  
+  z-index: 99;
   @media screen and (max-width: 768px) {
     justify-content: center;
     padding: 0 30px;
@@ -84,17 +86,21 @@ align-self: center;
 @media screen and (max-width: 768px) {
   margin-left: auto;
 }
-
 `;
 
+const BackLink = styled(Link)`
+  margin-right: .8rem;
+  flex: 1;
+  align-self: center;
+`
+
 export const BackArrow = styled(BiArrowBack)`
-margin-right: .8rem;
 transition: all .5s ;
-flex: 1;
 &:hover {
     transform: scale(2);
 }
-align-self: center;
+
+
 `;
 
 const UserInfo = styled.span`
