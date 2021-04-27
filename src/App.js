@@ -12,16 +12,13 @@ class App extends React.Component {
       <>
       <GlobalStyles/>   
       <BrowserRouter>
-      
         <MenuProvider>
           <Navbar />
         </MenuProvider>
-        
         <Route exact path="/"><Redirect to="/elon" /></Route>
         <Route exact path="/elon" component={() => <TweetFeed userIdNum="44196397" />} />
         <Route exact path="/POTUS" component={() => <TweetFeed userIdNum="1349149096909668363" />} />
         <Footer />
-        
       </BrowserRouter>     
       </>
     );

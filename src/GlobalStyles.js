@@ -13,11 +13,9 @@ const GlobalStyles = createGlobalStyle`
   *::after {
     box-sizing: inherit;
   }
-  
   a {
     text-decoration: none;
   }
-
 html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -39,25 +37,20 @@ body{
 }
 `;
 
-export default GlobalStyles;
-
 export const Container = styled.div`
 margin: 0 auto;
 padding: 0 50px;
 max-width: 1300px;
 width: 100%;
-
 @media (max-width:400px){
     padding: 0 10px;
 }
 @media (max-width:991px) {
     padding: 0 30px;
 }
-
 @media (min-width: 1500px) {
     max-width: 1100px;
 }
-
 @media (min-width: 1800px) {
     max-width: 1200px;
     padding: 0 30px;
@@ -66,8 +59,7 @@ width: 100%;
 export const Flex = styled.div`
   display: flex;
   flex-direction: row;
-  
-`
+`;
 
 export const Button = styled.button`
 border-radius: ${({bigRadius}) => bigRadius ? '30px': '20px'};
@@ -80,7 +72,6 @@ cursor: pointer;
 border: none;
 width: 200px;
 transition: all .5s ease;
-
 &:hover{
     background-color: rgba(29, 161, 242, 0.1);
     transform: translateY(-.5rem) scale(1.02);
@@ -98,8 +89,6 @@ transition: all .5s ease;
     padding: ${({big}) => big? '12px 20px' : '10px 20px'};
     font-size: ${({bigFont}) => bigFont? '16px': '18px'};
 }
-
-
 `;
 
 export const OutlineButton = styled.button`
@@ -122,8 +111,6 @@ background-color: #fefefe;
 &:active{
     transform: translateY(.5rem);
 }
-
-
 @media only screen and (max-width: 1200px) {
     border-radius: ${({bigRadius})=> bigRadius? '20px' : '18px'};
     padding: ${({big}) => big? '9px 30px' : '8px 28px'};
@@ -140,4 +127,6 @@ export const Verified = styled(GoVerified)`
   margin-left: 5px;
   font-size: 15px;
   align-self: center;
-`
+`;
+
+export default GlobalStyles;

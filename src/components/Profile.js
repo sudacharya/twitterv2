@@ -27,14 +27,12 @@ const Profile = ({user}) => {
 }
 
 
-
 const Container = styled.div`
 display: block;
 font-family: "Helvetica Neue", "Segoe UI", Roboto, Calibri, sans-serif;
 font-size: 12px;
 font-weight: bold;
 line-height: 16px;
-
 padding: 16px 16px 16px 16px;
 max-width: 600px;
 margin: 0 auto;
@@ -44,26 +42,21 @@ margin-top: 60px;
   transition-property: background-color, box-shadow;
   transition-duration: 0.2s;
 }
-
 @media (max-width: 1000px) {
   max-width: 100%;
 }
-
 .name {
   padding-top: 10px;
   text-align: center;
 }
-
 .username {
   font-weight: 300;
 }
-
 .profileImage {
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
-
 .description {
   font-size: 14px;
   font-weight: 400;
@@ -71,12 +64,9 @@ margin-top: 60px;
 .metric {
   font-size: 14px;
 }
-
 .metricName {
   font-weight: 300;
   margin-right: 20px;
-}
-
-`;
+}`;
 
 export default Profile

@@ -2,19 +2,14 @@ const express = require("express");
 const path = require("path");
 require('dotenv').config({path: __dirname + '/.env'});
 const axios = require("axios");
-
 const app = express();
-let port = process.env.PORT || 3000;
 
-app.get("/api/test", async (req, res) => {
-  res.send("works");
-})
+let port = process.env.PORT || 3000;
 
 app.get("/api/tweets/:id/:next_token?", async (req, res) => {
   const userId = req.params.id;
   const url = `https://api.twitter.com/2/users/${userId}/tweets`; 
   
-
   const getUserTweets = async () => {
     let userTweets = [];
     let params = {
@@ -40,8 +35,6 @@ app.get("/api/tweets/:id/:next_token?", async (req, res) => {
     let user;
     let meta;
     
-      
-    console.log("Retrieving Tweets...");
     if (hasNextPage) {
         let resp = await getPage(params, options, nextToken);
         if (resp && resp.meta && resp.meta.result_count && resp.meta.result_count > 0) {  
@@ -51,6 +44,7 @@ app.get("/api/tweets/:id/:next_token?", async (req, res) => {
             if (resp.data) { 
                 userTweets.push.apply(userTweets, resp.data);
             }
+
             if (resp.meta.next_token) {
                 nextToken = resp.meta.next_token;
             } else {
@@ -60,16 +54,16 @@ app.get("/api/tweets/:id/:next_token?", async (req, res) => {
             hasNextPage = false;
         }
       }
-      //console.dir(userTweets, {depth: null});
-      //console.log(`Got ${userTweets.length} Tweets from ${user.name} (user ID ${userId})!`);     
+      
       let message = {
         user: user,
         data: [...userTweets],
         meta: meta,
-       
       };
+
       res.send(message);
   }
+  
   const getPage = async (params, options, nextToken) => {
       if (nextToken && nextToken!== 0) {
           console.log("nextToken", nextToken);
@@ -80,11 +74,9 @@ app.get("/api/tweets/:id/:next_token?", async (req, res) => {
             ...options,
             params
           } );
-          
-          
+             
           if (resp.status !== 200) {
-              res.send(resp.data)
-              //console.log(`${resp.statusCode} ${resp.statusMessage}:\n${resp.body}`);           
+              res.send(resp.data);  
               return;
           }
           return resp.data;

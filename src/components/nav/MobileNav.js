@@ -18,8 +18,6 @@ const MobileNavbar = () => {
   );
 };
 
-export default MobileNavbar;
-
 const MobileNav = styled.nav`
   background-color: #fff;
   color: #000;
@@ -34,3 +32,5 @@ const MobileNav = styled.nav`
   z-index: 1
   
 `;
+
+export default MobileNavbar;
