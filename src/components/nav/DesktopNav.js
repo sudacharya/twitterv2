@@ -76,16 +76,7 @@ const DesktopNav = styled.nav`
 `;
 
 export const NavIcon = styled(FaTwitter)`
-margin-right: .8rem;
 transition: all .5s ;
-flex: 1;
-&:hover {
-    transform: scale(2);
-}
-align-self: center;
-@media screen and (max-width: 768px) {
-  margin-left: auto;
-}
 `;
 
 const BackLink = styled(Link)`
@@ -97,10 +88,8 @@ const BackLink = styled(Link)`
 export const BackArrow = styled(BiArrowBack)`
 transition: all .5s ;
 &:hover {
-    transform: scale(2);
+    transform: scale(1.4);
 }
-
-
 `;
 
 const UserInfo = styled.span`
