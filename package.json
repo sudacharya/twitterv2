@@ -40,6 +40,7 @@
     "serverDev": "nodemon server/index.js",
     "build": "npm install && react-scripts build",
     "test": "set NODE_ENV=development && concurrently --kill-others \"react-scripts test\" \"npm run server\"",
+    "testClient": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
