@@ -36,7 +36,6 @@ line-height: 16px;
 padding: 16px 16px 16px 16px;
 max-width: 600px;
 margin: 0 auto;
-margin-top: 60px;
 &:hover{
   background-color: #efefef;
   transition-property: background-color, box-shadow;
