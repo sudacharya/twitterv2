@@ -1,8 +1,9 @@
 import React, { useRef, useCallback, useState } from 'react'
-import { useFetch } from "../utils/useFetch";
+import useFetch from "../utils/useFetch";
 import Tweet from "./Tweet";
 import Spinner from "./Spinner";
 import Profile from "./Profile";
+
 const Feed = ({id}) => {
   const [pageNumber, setPageNumber] = useState("0");
   const {

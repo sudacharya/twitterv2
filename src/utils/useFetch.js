@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
 
-export const useFetch = (query, page) => {
+const useFetch = (query, page) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const [tweets, setTweets] = useState([])
@@ -39,3 +39,5 @@ export const useFetch = (query, page) => {
   }, [query, page]);
   return  { loading, error, tweets, hasMore, next_token, user }
 }
+
+export default useFetch
