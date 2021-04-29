@@ -1,5 +1,5 @@
 import React, { useRef, useCallback, useState } from 'react'
-import useFetch from "../utils/useFetch";
+import useFetch from "../hooks/useFetch";
 import Tweet from "./Tweet";
 import Spinner from "./Spinner";
 import Profile from "./Profile";

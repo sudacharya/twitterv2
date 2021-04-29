@@ -2,10 +2,6 @@ const express = require("express");
 let router = express.Router();
 const axios = require("axios");
 
-router.use((req, res, next) => {
-  console.log(req.url, "@", Date.now());
-  next();
-})
 
 router
   .route("/tweets/:id/:next_token?")

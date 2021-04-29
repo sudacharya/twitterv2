@@ -11,8 +11,7 @@ const useFetch = (query, page) => {
 
   useEffect(() => {
     setLoading(true);
-    setError(false);
-    
+    setError(false); 
     (async () => {
       axios.get(`/api/tweets/${query}/${page}`).then(res => {
         setTweets(prevTweets => {
@@ -24,11 +23,8 @@ const useFetch = (query, page) => {
         if(res.data.meta) {
           if(res.data.meta?.next_token != 0 && typeof res.data.meta.next_token !== "undefined") {
             setToken(res.data.meta.next_token);
-          }
-          
+          } 
         }
-        console.log(res.data);
-        
         setHasMore(res.data.data.length > 0)
         setLoading(false)
       }).catch(e => {
