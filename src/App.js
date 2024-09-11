@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/nav";
 import GlobalStyles, { Footer } from "./GlobalStyles";
 import Feed from "./components/Feed"
+
 import { MenuProvider } from "./state";
 
 
